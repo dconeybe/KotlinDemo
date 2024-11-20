@@ -27,3 +27,9 @@ tasks.register("printSystemProperties") {
         }
     }
 }
+
+tasks.register("printSystemInformation") {
+    doLast {
+        println("embeddedKotlinVersion: $embeddedKotlinVersion")
+    }
+}
