@@ -19,3 +19,11 @@ tasks.test {
 kotlin {
     jvmToolchain(17)
 }
+
+tasks.register("printSystemProperties") {
+    doLast {
+        System.getProperties().entries.sortedBy { "${it.key}".lowercase() }.forEach {
+            println("${it.key}: ${it.value}")
+        }
+    }
+}
